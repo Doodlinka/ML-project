@@ -206,8 +206,8 @@ trainparams.py
 *.onnx
 *.engine
 
-# can clutter but i ain't regenerating them
-# *split.txt
+# datasets subtly different between machines
+*0_split.txt
 
 # --- IDEs and OS ---
 .vscode/
