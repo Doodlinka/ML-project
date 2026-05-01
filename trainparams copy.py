@@ -5,7 +5,15 @@ CONFNAME = os.path.join(PROJDIR, "conf_nano_v1_15k.yaml")
 DATASET = os.path.join(PROJDIR, "train_15000_split.txt")
 PARAMS = {
     "data": CONFNAME,
+    # disable per-pixel cause it's done offline
+    "hsv_h": 0.0,      
+    "hsv_s": 0.0,      
+    "hsv_v": 0.0,      
+    "blur": 0.0,       
+    "median": 0,       
+
     "device": "cpu",
+    
     "name": 'nano_v1_15k',
     "epochs": 5,
     "imgsz": 640,
