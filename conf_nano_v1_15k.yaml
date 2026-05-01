@@ -1,0 +1,7 @@
+path: c:\Users\olesh\OneDrive\Desktop\ML project
+train: train_15000_split.txt
+val: val_split.txt
+
+names:
+  0: forest
+  1: bushes

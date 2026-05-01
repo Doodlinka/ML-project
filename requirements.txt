@@ -1,0 +1,57 @@
+albucore @ file:///home/conda/feedstock_root/build_artifacts/albucore_1741562823692/work
+albumentations @ file:///home/conda/feedstock_root/build_artifacts/albumentations_1748439838011/work
+annotated-types @ file:///C:/miniconda3/conda-bld/annotated-types_1761745107361/work
+brotlicffi @ file:///C:/miniconda3/conda-bld/brotlicffi_1764961374486/work
+certifi @ file:///C:/Users/task_177697113348838/croot/certifi_1776971246390/work/certifi
+cffi @ file:///C:/miniconda3/conda-bld/cffi_1761832792955/work
+charset-normalizer @ file:///C:/miniconda3/conda-bld/charset-normalizer_1761744975868/work
+contourpy @ file:///C:/miniconda3/conda-bld/contourpy_1763643940481/work
+cycler @ file:///C:/Users/task_176606794865467/croot/cycler_1766068048113/work
+eval_type_backport @ file:///C:/miniconda3/conda-bld/eval-type-backport_1764587469865/work
+filelock @ file:///C:/Users/task_176943977277622/croot/filelock_1769440567511/work
+fonttools @ file:///C:/Users/task_177425653248209/croot/fonttools_1774256605286/work
+fsspec @ file:///C:/Users/task_177399634026559/croot/fsspec_1773996412524/work
+gmpy2 @ file:///C:/miniconda3/conda-bld/gmpy2_1764748102257/work
+idna @ file:///C:/miniconda3/conda-bld/idna_1761912043388/work
+Jinja2 @ file:///C:/b/abs_920kup4e6u/croot/jinja2_1741711580669/work
+kiwisolver @ file:///C:/miniconda3/conda-bld/kiwisolver_1764159357446/work
+MarkupSafe @ file:///C:/b/abs_a0ma7ge0jc/croot/markupsafe_1738584052792/work
+matplotlib==3.10.8
+mkl-service==2.5.2
+mkl_fft @ file:///C:/miniconda3/conda-bld/mkl_fft_1761592916781/work
+mkl_random @ file:///C:/miniconda3/conda-bld/mkl_random_1761593076691/work
+mpmath @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/mpmath_1729048934933/work
+networkx @ file:///C:/miniconda3/conda-bld/networkx_1765378660985/work
+numkong @ file:///D:/bld/numkong-with-alias_1775525669554/work
+numpy @ file:///C:/Users/task_177520887802784/croot/numpy_and_numpy_base_1775209354862/work/dist/numpy-2.4.4-cp313-cp313-win_amd64.whl#sha256=faa93b38413b3934449a258393556c0373b558a8f99822809141668eb5aa513a
+opencv-python==4.13.0
+opencv-python-headless==4.13.0
+optree @ file:///C:/miniconda3/conda-bld/optree_1765445117785/work
+packaging==26.0
+pillow @ file:///C:/Users/task_177247540167737/croot/pillow_1772475505084/work
+polars @ file:///C:/Users/task_177382875652892/croot/polars-split_1773828886378/work
+polars-runtime-32 @ file:///C:/Users/task_177382875652892/croot/polars-split_1773828886378/work/polars-runtime-32
+psutil @ file:///C:/miniconda3/conda-bld/psutil_1761896538278/work
+pycparser @ file:///C:/Users/task_177495971170849/croot/pycparser_1774959815978/work
+pydantic @ file:///C:/Users/task_177313434358995/croot/pydantic_1773134412162/work
+pydantic_core @ file:///C:/miniconda3/conda-bld/pydantic-core_1764009799098/work
+pyparsing @ file:///C:/miniconda3/conda-bld/pyparsing_1763974011379/work
+PySocks @ file:///C:/miniconda3/conda-bld/pysocks_1761753030965/work
+python-dateutil @ file:///C:/Users/dev-admin/perseverance-python-buildout/croot/python-dateutil_1729038406576/work
+PyYAML @ file:///C:/miniconda3/conda-bld/pyyaml_1763465513644/work
+requests @ file:///C:/Users/task_177506607521974/croot/requests_1775066147511/work
+scipy @ file:///C:/Users/task_177325334935125/croot/scipy_1773254245935/work/dist/scipy-1.17.1-cp313-cp313-win_amd64.whl#sha256=13f2464a25ec8fca4947421a14f81839acb55c44141d8f6a1f7baf42efef1f9f
+setuptools==82.0.1
+simsimd==6.5.16
+six @ file:///C:/b/abs_149wuyuo1o/croot/six_1744271521515/work
+stringzilla @ file:///D:/bld/stringzilla_1766793828025/work
+sympy @ file:///C:/miniconda3/conda-bld/sympy_1764762977627/work
+torch @ file:///C:/Users/task_177404593287549/croot/libtorch_1774046058000/work
+torchvision @ file:///C:/Users/task_177548183589128/croot/torchvision_1775481913814/work
+typing-inspection @ file:///C:/miniconda3/conda-bld/typing-inspection_1760614188477/work
+typing_extensions @ file:///C:/b/abs_ecq8gc0vbm/croot/typing_extensions_1756281142218/work
+ultralytics @ file:///C:/Users/task_177506683978339/croot/ultralytics_1775067052722/work
+ultralytics-thop @ file:///C:/Users/task_177261746679788/croot/ultralytics-thop_1772617530959/work
+urllib3 @ file:///C:/Users/task_176781035981662/croot/urllib3_1767810483132/work
+wheel==0.46.3
+win_inet_pton @ file:///C:/miniconda3/conda-bld/win_inet_pton_1761746278300/work
