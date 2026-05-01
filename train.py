@@ -13,10 +13,8 @@ def makeconfig(inpath, outpath, trainfile):
         for line in config: f.write(line)
 
 
-
-os.chdir(os.path.abspath(os.path.dirname(__file__)))
+os.chdir(PROJDIR)
 model = YOLO(MODEL)
-
 makeconfig("dataset.yaml", CONFNAME, DATASET)
 results = model.train(
     project='ForestSeg',

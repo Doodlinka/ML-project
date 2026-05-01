@@ -1,5 +1,5 @@
 path: c:\Users\olesh\OneDrive\Desktop\ML project
-train: train_15000_split.txt
+train: c:\Users\olesh\OneDrive\Desktop\ML project\train_15000_split.txt
 val: val_split.txt
 
 names:

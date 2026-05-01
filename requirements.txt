@@ -2,7 +2,6 @@ albucore @ file:///home/conda/feedstock_root/build_artifacts/albucore_1741562823
 albumentations @ file:///home/conda/feedstock_root/build_artifacts/albumentations_1748439838011/work
 annotated-types @ file:///C:/miniconda3/conda-bld/annotated-types_1761745107361/work
 brotlicffi @ file:///C:/miniconda3/conda-bld/brotlicffi_1764961374486/work
-certifi @ file:///C:/Users/task_177697113348838/croot/certifi_1776971246390/work/certifi
 cffi @ file:///C:/miniconda3/conda-bld/cffi_1761832792955/work
 charset-normalizer @ file:///C:/miniconda3/conda-bld/charset-normalizer_1761744975868/work
 contourpy @ file:///C:/miniconda3/conda-bld/contourpy_1763643940481/work
@@ -42,7 +41,6 @@ PyYAML @ file:///C:/miniconda3/conda-bld/pyyaml_1763465513644/work
 requests @ file:///C:/Users/task_177506607521974/croot/requests_1775066147511/work
 scipy @ file:///C:/Users/task_177325334935125/croot/scipy_1773254245935/work/dist/scipy-1.17.1-cp313-cp313-win_amd64.whl#sha256=13f2464a25ec8fca4947421a14f81839acb55c44141d8f6a1f7baf42efef1f9f
 setuptools==82.0.1
-simsimd==6.5.16
 six @ file:///C:/b/abs_149wuyuo1o/croot/six_1744271521515/work
 stringzilla @ file:///D:/bld/stringzilla_1766793828025/work
 sympy @ file:///C:/miniconda3/conda-bld/sympy_1764762977627/work
