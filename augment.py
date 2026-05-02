@@ -14,12 +14,12 @@ transform = A.Compose([
     A.CLAHE(clip_limit=2.0, p=0.2)
 ])
 
-def create_augmented_dataset(baseimgs, aug_count, start_count):
+def create_augmented_dataset(targetimgs, aug_count, start_count):
     augmented_image_paths = []
     print(f"{start_count}/{start_count + aug_count}")
 
     for i in range(start_count, start_count + aug_count):
-        img_path = random.choice(baseimgs)
+        img_path = random.choice(targetimgs)
         img_path_obj = Path(img_path)
 
         new_img_name = f"{img_path_obj.stem}_aug_{i}{img_path_obj.suffix}"
@@ -56,10 +56,17 @@ def create_several_augs(base_split_txt, aug_count=5000, iter_count=3):
     if not baseimgs:
         print("err: split file not found")
         return
+    targetimgs = []
+    for img_path in baseimgs:
+        lbl_path = Path(str(img_path).replace('images', 'labels')).with_suffix('.txt')
+        if lbl_path.exists():
+            with open(lbl_path, 'r') as f:
+                if any(line.startswith('1') for line in f):
+                    targetimgs.append(img_path)
     currentimgs = baseimgs[:]
     for i in range(iter_count):
         print(f"\niteration {i+1}")
-        newimgs = create_augmented_dataset(baseimgs, aug_count, aug_count * i)
+        newimgs = create_augmented_dataset(targetimgs, aug_count, aug_count * i)
         currentimgs.extend(newimgs)
         with open(f"train_{10000 + aug_count*(i+1)}_split.txt", "w") as f:
             for p in currentimgs: f.write(p + "\n")
