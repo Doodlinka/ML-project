@@ -24,6 +24,6 @@ PARAMS = {
     "close_mosaic": 2,
 
     # "cls": 1.5,
-    # "fl_gamma": 1.5,
-    # "copy_paste": 0.5,
+    "copy_paste": 0.3,
+    "optimizer": "AdamW",
 }
