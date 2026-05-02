@@ -1,7 +1,0 @@
-path: /home/ihor/Datasets/datatrain_512_rgb50cm_v1_10k_yolo
-train: train_split.txt
-val: val_split.txt
-
-names:
-  0: forest
-  1: bushes

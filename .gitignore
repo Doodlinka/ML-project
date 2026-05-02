@@ -208,6 +208,8 @@ trainparams.py
 
 # datasets subtly different between machines
 *0_split.txt
+labels.cache
+*k.yaml
 
 # --- IDEs and OS ---
 .vscode/
