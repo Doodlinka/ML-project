@@ -25,24 +25,23 @@ def create_augmented_dataset(targetimgs, aug_count, start_count):
 
         image = cv2.imread(str(img_path))
         if image is None: continue # i'm gonna hope borked images are fine
-            
         # albumentations expects RGB, OpenCV uses BGR
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-        for j in range(5):
-            new_img_name = f"aug_{img_path_obj.stem}_{j}_{i}{img_path_obj.suffix}"
-            new_img_path = img_path_obj.parent / new_img_name
-            new_lbl_path = Path(str(new_img_path).replace('images', 'labels')).with_suffix('.txt')
 
-            augmented = transform(image=image)
-            aug_img_bgr = cv2.cvtColor(augmented['image'], cv2.COLOR_RGB2BGR)
+        new_img_name = f"aug_{img_path_obj.stem}_{i}{img_path_obj.suffix}"
+        new_img_path = img_path_obj.parent / new_img_name
+        new_lbl_path = Path(str(new_img_path).replace('images', 'labels')).with_suffix('.txt')
 
-            cv2.imwrite(str(new_img_path), aug_img_bgr)
+        augmented = transform(image=image)
+        aug_img_bgr = cv2.cvtColor(augmented['image'], cv2.COLOR_RGB2BGR)
 
-            # if label doesn't exist it's intended (empty)
-            if lbl_path.exists():
-                shutil.copy(str(lbl_path), str(new_lbl_path))
+        cv2.imwrite(str(new_img_path), aug_img_bgr)
 
-            augmented_image_paths.append(str(new_img_path))
+        # if label doesn't exist it's intended (empty)
+        if lbl_path.exists():
+            shutil.copy(str(lbl_path), str(new_lbl_path))
+
+        augmented_image_paths.append(str(new_img_path))
 
         if (i + 1) % 500 == 0:
             print(f"{i + 1}/{start_count + aug_count}")
@@ -50,23 +49,34 @@ def create_augmented_dataset(targetimgs, aug_count, start_count):
     return augmented_image_paths
 
 
-def create_several_augs(base_split_txt, aug_count=10000, iter_count=2):
+def create_several_augs(base_split_txt, aug_count=10000, iter_count=4):
     with open(base_split_txt, 'r') as f:
         baseimgs = [line.strip() for line in f if line.strip()]
     if not baseimgs:
         print("err: split file not found")
         return
     targetimgs = []
+    ones = 0
+    total = 0
+    uniqueimgs = 0
     for img_path in baseimgs:
         lbl_path = Path(str(img_path).replace('images', 'labels')).with_suffix('.txt')
         if lbl_path.exists():
             with open(lbl_path, 'r') as f:
+                # if any(line.startswith('1') for line in f): targetimgs.append(img_path)
                 curtotal = 0
                 cur1s = 0
                 for line in f:
                     curtotal += 1
                     if line.startswith('1'): cur1s += 1
-                if cur1s / curtotal >= 0.3: targetimgs.append(img_path)
+                weight = int(10 * ((cur1s / curtotal) ** 2))
+                if weight: uniqueimgs += 1
+                for _ in range(weight): 
+                    total += curtotal
+                    ones += cur1s
+                    targetimgs.append(img_path)
+    print(len(targetimgs), uniqueimgs, ones, total)
+    # return
     currentimgs = baseimgs[:]
     for i in range(iter_count):
         print(f"\niteration {i+1}")

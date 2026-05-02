@@ -13,7 +13,7 @@ LABEL_DIR = Path('./labels')
 
 def cleanup_augmented_files():
     # We look for anything containing 'aug' in the name
-    pattern = '*aug*'
+    pattern = 'aug*'
     
     # 1. Find the target files
     image_files = list(IMAGE_DIR.glob(pattern))
