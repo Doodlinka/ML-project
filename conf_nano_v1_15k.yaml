@@ -1,7 +1,0 @@
-path: /home/doodlinka/Desktop/ML-project
-train: /home/doodlinka/Desktop/ML-project/train_15000_split.txt
-val: val_split.txt
-
-names:
-  0: forest
-  1: bushes

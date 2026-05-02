@@ -18,4 +18,4 @@ bushes     342       1467      0.0655      0.117     0.0467     0.0221     0.049
 
 nano v3 15k (10ep, image_weights=True)
 
-nano v4 15k (10ep, fl_gamma=1.5)
+nano v4 15k (10ep, cls=1, copy_paste=0.5, optimizer=AdamW)
