@@ -1,4 +1,4 @@
-import os
+import os, time
 from ultralytics import YOLO
 from trainparams import *
 
@@ -12,11 +12,13 @@ def makeconfig(inpath, outpath, trainfile):
     with open(outpath, "w") as f:
         for line in config: f.write(line)
 
-
-os.chdir(PROJDIR)
-model = YOLO(MODEL)
-makeconfig("dataset.yaml", CONFNAME, DATASET)
-results = model.train(
-    project='ForestSeg',
-    **PARAMS
-)
+if __name__ == "__main__":
+    start = time.time()
+    os.chdir(PROJDIR)
+    model = YOLO(MODEL)
+    makeconfig("dataset.yaml", CONFNAME, DATASET)
+    results = model.train(
+        project='ForestSeg',
+        **PARAMS
+    )
+    print(f"\n\n{time.time() - start} s\n\n")
