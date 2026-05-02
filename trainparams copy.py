@@ -7,17 +7,23 @@ DATASET = os.path.join(PROJDIR, f"train_{AMWAUG}000_split.txt")
 
 PARAMS = {
     "data": CONFNAME,
+    "device": 0,
+    "amp": True,
     # disable per-pixel cause it's done offline
     "hsv_h": 0.0,      
     "hsv_s": 0.0,      
-    "hsv_v": 0.0,            
+    "hsv_v": 0.0,    
 
-    "device": 0,
-    
-    "name": f'nano_v2_{AMWAUG}k',
-    "cls": 2,
-    "epochs": 10,
+    "name": f'nano_v3_{AMWAUG}k',        
+
     "imgsz": 640,
-    "batch": 12,
-    "workers": 5,
+    "batch": 0.8,
+
+    "epochs": 10,
+    "patience": 5,
+    "close_mosaic": 2,
+
+    # "cls": 1.5,
+    # "fl_gamma": 1.5,
+    # "copy_paste": 0.5,
 }
