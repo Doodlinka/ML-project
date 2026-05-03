@@ -210,6 +210,7 @@ trainparams.py
 *0_split.txt
 labels.cache
 *k.yaml
+tmpconfig.yaml
 
 # --- IDEs and OS ---
 .vscode/

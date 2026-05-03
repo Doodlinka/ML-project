@@ -16,12 +16,12 @@ def clean(path):
         cls = lines[i].split(maxsplit=1)[0]
         if cls == '0': forests += 1
         elif cls == '1': bushes += 1
-        else:
-            lines.pop(i)
-            mustclean = True
-    if mustclean:
-        with open(path, 'w') as file:
-            file.writelines(lines)
+        # else:
+        #     lines.pop(i)
+        #     mustclean = True
+    # if mustclean:
+    #     with open(path, 'w') as file:
+    #         file.writelines(lines)
 
 for root, _, files in os.walk("./labels"):
     for fname in files:
