@@ -30,7 +30,7 @@ def create_augmented_dataset(targetimgs, aug_count, start_count):
 
         new_img_name = f"aug_{img_path_obj.stem}_{i}{img_path_obj.suffix}"
         new_img_path = img_path_obj.parent / new_img_name
-        new_lbl_path = Path(str(new_img_path).replace('images', 'labels')).with_suffix('.txt').resolve().as_posix()
+        new_lbl_path = Path(str(new_img_path).replace('images', 'labels')).with_suffix('.txt')
 
         augmented = transform(image=image)
         aug_img_bgr = cv2.cvtColor(augmented['image'], cv2.COLOR_RGB2BGR)
@@ -41,7 +41,7 @@ def create_augmented_dataset(targetimgs, aug_count, start_count):
         if lbl_path.exists():
             shutil.copy(str(lbl_path), str(new_lbl_path))
 
-        augmented_image_paths.append(str(new_img_path))
+        augmented_image_paths.append(new_img_path.resolve().as_posix())
 
         if (i + 1) % 500 == 0:
             print(f"{i + 1}/{start_count + aug_count}")
