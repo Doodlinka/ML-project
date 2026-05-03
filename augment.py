@@ -49,34 +49,7 @@ def create_augmented_dataset(targetimgs, aug_count, start_count):
     return augmented_image_paths
 
 
-def create_several_augs(base_split_txt, aug_count=10000, iter_count=4):
-    with open(base_split_txt, 'r') as f:
-        baseimgs = [line.strip() for line in f if line.strip()]
-    if not baseimgs:
-        print("err: split file not found")
-        return
-    targetimgs = []
-    ones = 0
-    total = 0
-    uniqueimgs = 0
-    for img_path in baseimgs:
-        lbl_path = Path(str(img_path).replace('images', 'labels')).with_suffix('.txt')
-        if lbl_path.exists():
-            with open(lbl_path, 'r') as f:
-                # if any(line.startswith('1') for line in f): targetimgs.append(img_path)
-                curtotal = 0
-                cur1s = 0
-                for line in f:
-                    curtotal += 1
-                    if line.startswith('1'): cur1s += 1
-                weight = int(10 * ((cur1s / curtotal) ** 2))
-                if weight: uniqueimgs += 1
-                for _ in range(weight): 
-                    total += curtotal
-                    ones += cur1s
-                    targetimgs.append(img_path)
-    print(len(targetimgs), uniqueimgs, ones, total)
-    # return
+def create_several_augs(baseimgs, targetimgs, aug_count=10000, iter_count=4):
     currentimgs = baseimgs[:]
     for i in range(iter_count):
         print(f"\niteration {i+1}")
@@ -85,9 +58,3 @@ def create_several_augs(base_split_txt, aug_count=10000, iter_count=4):
         with open(f"train_{10000 + aug_count*(i+1)}_split.txt", "w") as f:
             for p in currentimgs: f.write(p + "\n")
     print("\ndone!")
-            
-
-
-if __name__ == "__main__":
-    os.chdir(os.path.dirname(__file__))
-    create_several_augs('train_split.txt')
