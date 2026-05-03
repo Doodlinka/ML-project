@@ -9,9 +9,9 @@ from pathlib import Path
 transform = A.Compose([
     A.RandomBrightnessContrast(brightness_limit=0.2, contrast_limit=0.2, p=0.7),
     A.GaussianBlur(blur_limit=(3, 7), p=0.3),
-    A.GaussNoise(std_range=(0.02, 0.05), mean_range=(0.0, 0.0), p=0.3),
-    A.HueSaturationValue(hue_shift_limit=10, sat_shift_limit=20, val_shift_limit=10, p=0.4),
-    A.CLAHE(clip_limit=2.0, p=0.2)
+    A.GaussNoise(std_range=(0.02, 0.1), mean_range=(0.0, 0.0), p=0.3),
+    A.HueSaturationValue(hue_shift_limit=15, sat_shift_limit=0, val_shift_limit=0, p=0.4),
+    A.CLAHE(clip_limit=2.5, p=0.2)
 ])
 
 def create_augmented_dataset(targetimgs, aug_count, start_count):
@@ -30,7 +30,7 @@ def create_augmented_dataset(targetimgs, aug_count, start_count):
 
         new_img_name = f"aug_{img_path_obj.stem}_{i}{img_path_obj.suffix}"
         new_img_path = img_path_obj.parent / new_img_name
-        new_lbl_path = Path(str(new_img_path).replace('images', 'labels')).with_suffix('.txt')
+        new_lbl_path = Path(str(new_img_path).replace('images', 'labels')).with_suffix('.txt').resolve().as_posix()
 
         augmented = transform(image=image)
         aug_img_bgr = cv2.cvtColor(augmented['image'], cv2.COLOR_RGB2BGR)

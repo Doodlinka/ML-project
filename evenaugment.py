@@ -7,4 +7,4 @@ if __name__ == "__main__":
     if not baseimgs:
         print("err: split file not found")
         exit(1)
-    create_several_augs(baseimgs, baseimgs, aug_count=5000, iter_count=8)
+    create_several_augs(baseimgs, baseimgs, aug_count=5000, iter_count=6)

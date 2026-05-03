@@ -69,6 +69,6 @@ bushes        342       1467      0.557    0.00259      0.039     0.0165      0.
 
 
 
-small v3-1 50k (30ep, old augs, dropout=0.3)
+small v3-1 40k (30ep, old augs, dropout=0.3)
 
-small v3-2 25k (60ep, old augs, dropout=0.3)
+small v3-2 20k (60ep, old augs, dropout=0.3)
