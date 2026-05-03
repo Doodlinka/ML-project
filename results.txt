@@ -66,3 +66,9 @@ Class     Images  Instances      Box(P          R      mAP50  mAP50-95)     Mask
 all       1500      31725      0.567      0.242      0.267      0.133      0.546      0.231      0.248      0.107
 forest       1162      30258      0.576      0.482      0.494       0.25      0.561      0.459      0.469      0.204
 bushes        342       1467      0.557    0.00259      0.039     0.0165      0.532    0.00235     0.0271    0.00966
+
+
+
+small v3-1 50k (30ep, old augs, dropout=0.3)
+
+small v3-2 25k (60ep, old augs, dropout=0.3)
