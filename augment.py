@@ -49,7 +49,7 @@ def create_augmented_dataset(targetimgs, aug_count, start_count):
     return augmented_image_paths
 
 
-def create_several_augs(baseimgs, targetimgs, aug_count=10000, iter_count=4):
+def create_several_augs(baseimgs, targetimgs, aug_count=5000, iter_count=4):
     currentimgs = baseimgs[:]
     for i in range(iter_count):
         print(f"\niteration {i+1}")

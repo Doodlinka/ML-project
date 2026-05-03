@@ -21,14 +21,15 @@ def get_imgs_to_aug(baseimgs):
                     ones += cur1s
                     targetimgs.append(img_path)
     print(len(targetimgs), uniqueimgs, ones, total)
+    return targetimgs
     
     
 if __name__ == "__main__":
     os.chdir(os.path.dirname(__file__))
     with open('train_split.txt', 'r') as f:
-        baseimgs = baseimgs = [Path(line.strip()).resolve().as_posix() for line in f if line.strip()]
+        baseimgs = [Path(line.strip()).resolve().as_posix() for line in f if line.strip()]
     if not baseimgs:
         print("err: split file not found")
         exit(1)
     targetimgs = get_imgs_to_aug(baseimgs)
-    create_several_augs(baseimgs, targetimgs)
+    create_several_augs(baseimgs, targetimgs, iter_count=1)
