@@ -21,4 +21,4 @@ if __name__ == "__main__":
         project='ForestSeg',
         **PARAMS
     )
-    print(f"\n\n{(time.time() - start)/3600:.2} h\n\n")
+    print(f"\a\a\a\n\n{(time.time() - start)/3600:.2} h\n\n")
