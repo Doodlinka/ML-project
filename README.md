@@ -31,6 +31,8 @@ runs поки в gitignore, але можу додати. Результати �
 <img width="2250" height="1500" alt="image" src="https://github.com/user-attachments/assets/a6d7f511-a7b8-4d5b-b3b9-807e87a8707e" />
 <img width="2250" height="1500" alt="image" src="https://github.com/user-attachments/assets/384e1d86-9cc7-48ab-bd72-3037184af2c1" />
 <img width="3000" height="2250" alt="image" src="https://github.com/user-attachments/assets/223bf3b9-22ac-4eb7-9dcb-54aa3a6d568b" />
+<img width="1920" height="1920" alt="image" src="https://github.com/user-attachments/assets/41b1b60d-a08e-4bf5-b99f-80df34c673bd" />
+
 
 ## 6) Чистка масок
 
