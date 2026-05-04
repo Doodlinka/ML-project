@@ -35,3 +35,5 @@ runs поки в gitignore, але можу додати. Результати �
 ## 6) Чистка масок
 
 Просили спробувати зачистити маски YOLO за допомогою стандартного computer vision? Накидала приклад використання моделі в openclosetest.py - після завантаження моделі та predict, скрипт використовує open-close з opencv, щоб підчистити маску (прибрати оодинокі пікселі та згладити края).
+<img width="1000" height="500" alt="Figure_1" src="https://github.com/user-attachments/assets/0724a556-2df6-478d-bb54-da1c23d6ffc6" />
+<img width="1000" height="500" alt="Figure_2" src="https://github.com/user-attachments/assets/99c378f4-ef3b-442b-a21c-eeabe5398f92" />
