@@ -14,7 +14,7 @@ def get_imgs_to_aug(baseimgs):
                 for line in f:
                     curtotal += 1
                     if line.startswith('1'): cur1s += 1
-                weight = int(10 * ((cur1s / curtotal) ** 2))
+                weight = int(10 * ((cur1s / curtotal))) #  ** 2))
                 if weight: uniqueimgs += 1
                 for _ in range(weight): 
                     total += curtotal
@@ -32,4 +32,4 @@ if __name__ == "__main__":
         print("err: split file not found")
         exit(1)
     targetimgs = get_imgs_to_aug(baseimgs)
-    create_several_augs(baseimgs, targetimgs, iter_count=1)
+    create_several_augs(baseimgs, targetimgs, iter_count=4)
